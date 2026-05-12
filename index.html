@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="app-title" data-i18n="appTitle">Weather Dashboard</h1>
+      <div class="lang-switcher">
+        <button id="lang-en" class="lang-btn" data-lang="en">EN</button>
+        <button id="lang-zh" class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="search-section">
+        <div class="search-bar">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search for a city..."
+            data-i18n-placeholder="searchPlaceholder"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="search-btn" type="button" data-i18n="searchBtn">Search</button>
+        </div>
+        <div id="error-message" class="error-message hidden" role="alert"></div>
+      </section>
+
+      <div id="loading-spinner" class="spinner-wrap hidden" aria-label="Loading">
+        <div class="spinner"></div>
+      </div>
+
+      <section id="current-weather" class="current-weather hidden">
+        <div class="current-card">
+          <div id="location-name" class="location-name"></div>
+          <div id="weather-icon" class="weather-icon"></div>
+          <div id="temperature" class="temperature"></div>
+          <div id="weather-description" class="weather-description"></div>
+          <div class="stats-row">
+            <div class="stat-card">
+              <span class="stat-label" data-i18n="feelsLike">Feels like</span>
+              <span id="feels-like" class="stat-value"></span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label" data-i18n="humidity">Humidity</span>
+              <span id="humidity" class="stat-value"></span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label" data-i18n="wind">Wind</span>
+              <span id="wind-speed" class="stat-value"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="forecast-section" class="forecast-section hidden">
+        <h2 class="section-title" data-i18n="forecastTitle">7-Day Forecast</h2>
+        <div id="forecast-grid" class="forecast-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
